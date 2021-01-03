@@ -18,6 +18,7 @@ const StyledButton = styled.button`
     }
 `;
 
+//Button이 받아 오는 props를 모두 StyledButton에 전달한다는 의미
 const Button = props => <StyledButton {...props}/>;
 
 export default Button;
