@@ -76,10 +76,10 @@ const AuthForm = ({type}) => {
                 )}
                 {type === 'register' && (
                     <StyledInput
-                        autoComplete="my-name"
-                        name="my-name"
+                        autoComplete="myname"
+                        name="myname"
                         placeholder="이름"
-                        type="my-name"
+                        type="myname"
                     />
                 )}
                 {type === 'register' && (
