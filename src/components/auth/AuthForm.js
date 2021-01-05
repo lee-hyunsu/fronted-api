@@ -58,7 +58,7 @@ const AuthForm = ({type}) => {
                 <StyledInput
                     autoComplete="username" 
                     name="username" 
-                    placeholder="아이디"
+                    placeholder="이메일"
                 />
                 <StyledInput
                     autoComplete="new-password"
@@ -72,6 +72,30 @@ const AuthForm = ({type}) => {
                         name="paswordComfirm"
                         placeholder="비밀번호 확인"
                         type="password"
+                    />
+                )}
+                {type === 'register' && (
+                    <StyledInput
+                        autoComplete="my-name"
+                        name="my-name"
+                        placeholder="이름"
+                        type="my-name"
+                    />
+                )}
+                {type === 'register' && (
+                    <StyledInput
+                        autoComplete="nickname"
+                        name="nickname"
+                        placeholder="닉네임"
+                        type="nickname"
+                    />
+                )}
+                {type === 'register' && (
+                    <StyledInput
+                        autoComplete="phoneauth"
+                        name="phoneauth"
+                        placeholder="핸드폰 인증('-없이')"
+                        type="phoneauth"
                     />
                 )}
                 <ButtonWidthMarginTop cyan fullWidth style={{margin: '1rem'}}>
