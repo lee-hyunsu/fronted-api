@@ -4,6 +4,7 @@ import palette from '../../lib/styles/palette';
 import {Link} from 'react-router-dom';
 import Button from '../common/Button';
 
+//로그인, 회원가입 폼을 보여줌
 const AuthFormBlock = styled.div`
     h3{
         margin: 0;
@@ -12,6 +13,7 @@ const AuthFormBlock = styled.div`
     }
 `;
 
+//input에 스타일 적용
 const StyledInput = styled.input`
     font-size: 1rem;
     border: none;
@@ -28,6 +30,7 @@ const StyledInput = styled.input`
     }
 `;
 
+//폼 하단에 로그인, 회원가입 링크를 보여주는 거
 const Footer = styled.div`
     margin-top: 2rem;
     text-align: right;
@@ -49,22 +52,26 @@ const textmap = {
     register: '회원가입',
 };
 
-const AuthForm = ({type}) => {
+const AuthForm = ({type, form, onChange, onSubmit}) => {
     const text = textmap[type];
     return(
         <AuthFormBlock>
             <h3>{text}</h3>
-            <form>
+            <form onSubmit={onSubmit}>
                 <StyledInput
                     autoComplete="username" 
                     name="username" 
                     placeholder="이메일"
+                    onChange={onChange} 
+                    value={form.username}
                 />
                 <StyledInput
                     autoComplete="new-password"
                     name="password"
                     placeholder="비밀번호"
                     type="password"
+                    onChange={onChange}
+                    value={form.passwordConfirm}
                 />
                 {type === 'register' && (
                     <StyledInput
@@ -80,6 +87,8 @@ const AuthForm = ({type}) => {
                         name="myname"
                         placeholder="이름"
                         type="myname"
+                        onChange={onChange}
+                        value={form.myname}
                     />
                 )}
                 {type === 'register' && (
@@ -88,6 +97,8 @@ const AuthForm = ({type}) => {
                         name="nickname"
                         placeholder="닉네임"
                         type="nickname"
+                        onChange={onChange}
+                        value={form.nickname}
                     />
                 )}
                 {type === 'register' && (
@@ -96,6 +107,8 @@ const AuthForm = ({type}) => {
                         name="phoneauth"
                         placeholder="핸드폰 인증('-없이')"
                         type="phoneauth"
+                        onChange={onChange}
+                        value={form.phoneauth}
                     />
                 )}
                 <ButtonWidthMarginTop cyan fullWidth style={{margin: '1rem'}}>
