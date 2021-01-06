@@ -1,13 +1,13 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
-import PostListPage from './pages/PostListPage';
+import MainPage from './pages/MainPage';
 import RegisterPage from './pages/RegisterPage';
 
 function App(){
   return(
     <>
-      <Route component={PostListPage} path=""/>
+      <Route component={MainPage} path=""/>
       <Route component={LoginPage} path="/login"/>
       <Route component={RegisterPage} path="/register"/>
     </>
