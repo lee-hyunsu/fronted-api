@@ -1,10 +1,11 @@
 //Button 컴포넌트는 재사용하기 위해서 common디렉터리에 넣음.
 import React from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import palette from '../../lib/styles/palette';
+import {Link} from 'react-router-dom';
 
 
-const StyledButton = styled.button`
+const buttonStyle = css`
     border: none;
     border-radius: 4px;
     font-size: 1rem;
@@ -21,8 +22,7 @@ const StyledButton = styled.button`
 
     ${props =>
         props.fullWidth &&
-        //css
-        `
+        css`
         padding-top: 0.75rem;
         padding-bottom: 0.75rem;
         width: 90%;
@@ -31,8 +31,7 @@ const StyledButton = styled.button`
     
     ${props =>
         props.cyan &&
-        //css
-        `
+        css`
         background: ${palette.cyan[5]};
         &: hover{
             background: ${palette.cyan[4]};
@@ -40,7 +39,21 @@ const StyledButton = styled.button`
     `}
 `;
 
+const StyledButton = styled.button`
+        ${buttonStyle}
+`;
+
+const StyledLink = styled(Link)`
+        ${buttonStyle}
+`;
+
 //Button이 받아 오는 props를 모두 StyledButton에 전달한다는 의미
-const Button = props => <StyledButton {...props}/>;
+const Button = ({to, history, ...props}) => {
+    return props.to ? (
+        <StyledLink {...props} cyan={props.cyan ? 1 : 0} />
+    ) : (
+        <StyledButton {...props} />
+    );
+};
 
 export default Button;

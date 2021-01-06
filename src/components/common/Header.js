@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Responsive from './Responsive';
 import Button from './Button';
+import {Link} from 'react-router-dom';
 
 const HeaderBlock = styled.div`
     //position: fixed;
@@ -41,10 +42,10 @@ const Header = () => {
         <>
             <HeaderBlock>
                 <Wrapper>
-                    <div className="logo">API제공 사이트</div>
-                    <div className="right">
+                    <Link to="/" className="logo">API제공 사이트</Link>
+                    <Link to="/login" className="right">
                         <Button>로그인</Button>
-                    </div>
+                    </Link>
                 </Wrapper>
             </HeaderBlock>
             <Spacer />
