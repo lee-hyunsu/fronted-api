@@ -1,10 +1,10 @@
 //Button 컴포넌트는 재사용하기 위해서 common디렉터리에 넣음.
 import React from 'react';
-import styled, {css} from 'styled-components';
+import styled, {css} from 'styled-components'; //
 import palette from '../../lib/styles/palette';
 import {Link} from 'react-router-dom';
 
-
+//css
 const buttonStyle = css`
     border: none;
     border-radius: 4px;
