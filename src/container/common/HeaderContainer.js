@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import {useSelector} from 'react=-redux';
 import Header from '../../components/common/Header';
 
@@ -7,4 +7,4 @@ const HeaderContainer = () => {
     return <Header user={user}/>
 };
 
-export default HeaderContainer;
+export default HeaderContainer;*/
