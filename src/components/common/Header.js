@@ -37,6 +37,11 @@ const Spacer = styled.div`
     height: 4rem;
 `;
 
+const UserInfo = styled.div`
+    font-weight: 800;
+    margin-right: 1rem;
+`;
+
 const Header = ({user}) => {
     return (
         <>
@@ -44,15 +49,18 @@ const Header = ({user}) => {
                 <Wrapper>
                     <Link to="/" className="logo">API제공 사이트</Link>
                         {user ? (
-                            <Link to="/login" className="right">
+                            <div className="right">
                                 <UserInfo>{user.username}</UserInfo>
                                 <Button>로그아웃</Button>
-                            </Link>
+                            </div>
                         ) : (
                             <Link to="/login" className="right">
                                 <Button>로그인</Button>
                             </Link>
                         )}
+                        <Link to="/login" className="right">
+                            <Button>로그인</Button>
+                        </Link>
                     
                 </Wrapper>
             </HeaderBlock>
