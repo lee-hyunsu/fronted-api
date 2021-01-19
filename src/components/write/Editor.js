@@ -37,6 +37,17 @@ const Editor = () => {
     const quillnstance = useRef(null); //Quill인스턴스를 설정
 
     useEffect(() => {
-        
-    })
+        quillnstance.current = new Quill(quillElement.current, {
+            theme: 'bubble',
+            placeholder: '내용을 작성하세요.',
+            modules: {
+                toolbar: [
+                    [{header: '1'}, {header: '2'}],
+                    ['bold', 'italic', 'underline', 'strike'],
+                    [{list: 'orederd'}, {list: 'bullet'}],
+                    ['blockquote', 'code-block', 'link', 'image'],
+                ],
+            },
+        });
+    }, []);
 }
