@@ -50,4 +50,15 @@ const Editor = () => {
             },
         });
     }, []);
-}
+
+    return(
+        <EditorBlock>
+            <TitledInput placeholder="제목을 입력하세요."/>
+            <QuillWrapper>
+                <div ref={quillElement} />
+            </QuillWrapper>
+        </EditorBlock>
+    );
+};
+
+export default Editor;
