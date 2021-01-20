@@ -75,12 +75,12 @@ const TagList = React.memo(({tags}) => (
 const TagBox = () => {
     return (
         <TagBoxBlock>
-            <h4>태그</h4>
+            <h4>서치서치서치</h4>
             <TagForm>
-                <input placeholder="태그를 입력하세요"/>
+                <input placeholder="뭐 찾아볼까..."/>
                 <button type="submit">추가</button>
             </TagForm>
-            <TagList tags={['태그1', '태그2', '태그3']}/>
+            <TagList tags={['주식', '지도', '머신러닝']}/>
         </TagBoxBlock>
     );
 };
