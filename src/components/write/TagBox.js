@@ -62,3 +62,27 @@ const TagListBlock = styled.div`
 
 //React.memo를 사용하여 tag값이 바뀔 때만 리렌더링 되도록 처리
 const TagItem = React.memo(({tag}) => <Tag>#{tag}</Tag>)
+
+//React.memo를 사용하여 tags값이 바뀔 ㄸ만 리렌더링 되도록 처리
+const TagList = React.memo(({tags}) => (
+    <TagListBlock>
+        {tags.map(tag => (
+            <TagItem key={tag} tag={tag} />
+        ))}
+    </TagListBlock>
+));
+
+const TagBox = () => {
+    return (
+        <TagBoxBlock>
+            <h4>태그</h4>
+            <TagForm>
+                <input placeholder="태그를 입력하세요"/>
+                <button type="submit">추가</button>
+            </TagForm>
+            <TagList tags={['태그1', '태그2', '태그3']}/>
+        </TagBoxBlock>
+    );
+};
+
+export default TagBox;
