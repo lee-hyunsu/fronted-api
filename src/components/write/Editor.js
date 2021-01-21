@@ -34,10 +34,10 @@ const QuillWrapper = styled.div`
 
 const Editor = () => {
     const quillElement = useRef(null); //Quill을 적용할 DivElement를 설정
-    const quillnstance = useRef(null); //Quill인스턴스를 설정
+    const quillInstance = useRef(null); //Quill인스턴스를 설정
 
     useEffect(() => {
-        quillnstance.current = new Quill(quillElement.current, {
+        quillInstance.current = new Quill(quillElement.current, {
             theme: 'bubble',
             placeholder: '내용을 작성하세요.',
             modules: {
