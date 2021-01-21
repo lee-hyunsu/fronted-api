@@ -108,10 +108,10 @@ const TagBox = () => {
 
     return (
         <TagBoxBlock>
-            <h4>서치서치서치</h4>
+            <h4>해시태그 추가</h4>
             <TagForm onSubmit={onSubmit}>
                 <input 
-                    placeholder="뭐 찾아볼까..."
+                    placeholder="뭐 추가할래?..."
                     value={input}
                     onChange={onChange}
                 />
