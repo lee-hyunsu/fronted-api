@@ -78,16 +78,46 @@ const TagBox = () => {
     const [input, setInput] = useState('');
     const [localTags, setLocalTags] = useState([]);
 
-    condt
+    const insertTag = useCallback(
+        tag => {
+            if(!tag) return; //공백이면 추가 x
+            if(localTags.includes(tag)) return; //이미 존재하면 추가 x
+            setLocalTags([...localTags, tag]);
+        },
+        [localTags],
+    );
+
+    const onRemove = useCallback(
+        tag => {
+            setLocalTags(localTags.filter(t => t !== tag));
+        },
+        [localTags],
+    );
+    const onChange = useCallback(e => {
+        setInput(e.target.value);
+    }, []);
+
+    const onSubmit = useCallback(
+        e => {
+            e.preventDefault();
+            insertTag(input.trim()); // 앞뒤 추가 공배을 없앤 후 등록
+            setInput(''); // input 초기화
+        },
+        [input, insertTag],
+    );
 
     return (
         <TagBoxBlock>
             <h4>서치서치서치</h4>
-            <TagForm>
-                <input placeholder="뭐 찾아볼까..."/>
+            <TagForm onSubmit={onSubmit}>
+                <input 
+                    placeholder="뭐 찾아볼까..."
+                    value={input}
+                    onChange={onChange}
+                />
                 <button type="submit">추가</button>
             </TagForm>
-            <TagList tags={['주식', '지도', '머신러닝']}/>
+            <TagList tags={localTags} onRemove={onRemove}/>
         </TagBoxBlock>
     );
 };
