@@ -62,18 +62,24 @@ const TagListBlock = styled.div`
 `;
 
 //React.memo를 사용하여 tag값이 바뀔 때만 리렌더링 되도록 처리
-const TagItem = React.memo(({tag}) => <Tag>#{tag}</Tag>)
+const TagItem = React.memo(({tag, onRemove}) => 
+    <Tag onClick={() => onRemove(tag)}>#{tag}</Tag>)
 
 //React.memo를 사용하여 tags값이 바뀔 ㄸ만 리렌더링 되도록 처리
-const TagList = React.memo(({tags}) => (
+const TagList = React.memo(({tags, onRemove}) => (
     <TagListBlock>
         {tags.map(tag => (
-            <TagItem key={tag} tag={tag} />
+            <TagItem key={tag} tag={tag} onRemove={onRemove}/>
         ))}
     </TagListBlock>
 ));
 
 const TagBox = () => {
+    const [input, setInput] = useState('');
+    const [localTags, setLocalTags] = useState([]);
+
+    condt
+
     return (
         <TagBoxBlock>
             <h4>서치서치서치</h4>

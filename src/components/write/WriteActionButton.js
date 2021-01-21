@@ -1,3 +1,4 @@
+//포스트 작성 및 취소할 수 있게함
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../common/Button';
