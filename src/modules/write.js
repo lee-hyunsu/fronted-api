@@ -1,3 +1,4 @@
+//write 리덕스 모듈(글쓰기 관련 상태를 리덕스로 관리해주기?)
 import {createAction, handleActions} from 'redux-actions';
 
 const INITIALIZE = 'write/INITIALIZE'; //모든 내용 초기화,
