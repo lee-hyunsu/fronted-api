@@ -1,5 +1,4 @@
 import React from 'react';
-import React from 'react';
 import TagBox from '../components/write/TagBox';
 import Responsive from '../components/common/Responsive';
 import WriteActionButtons from '../components/write/WriteActionButton';
