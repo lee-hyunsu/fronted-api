@@ -1,9 +1,7 @@
 import React, {useEffect, useCallback} from 'react';
 import Editor from '../../components/write/Editor';
-import {initialize} from '../../modules/write';
+import {initialize, changeField} from '../../modules/write';
 import {useDispatch, useSelector} from 'react-redux';
-import { changeField } from '../../modules/auth';
-
 
 const EditorContainer = () => {
     const dispatch = useDispatch();
@@ -25,3 +23,5 @@ const EditorContainer = () => {
     }
 
 export default EditorContainer;
+
+//언마운트...useEffect
