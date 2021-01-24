@@ -24,4 +24,6 @@ const EditorContainer = () => {
 
 export default EditorContainer;
 
-//언마운트...useEffect
+//사용자가 writePage를 벗어날 때는 데이터를 초기화해야 함.
+//컴포넌트가 언마운트될 때 useEffect로 INITIALIZE액션을 발생시켜서
+//리덕스의 write관련 상태를 초기화해준다.
